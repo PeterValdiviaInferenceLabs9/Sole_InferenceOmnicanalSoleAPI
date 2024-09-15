@@ -1,0 +1,14 @@
+package com.inference.whatsappintegration.domain.service;
+
+import com.inference.whatsappintegration.application.dto.conversationsdto.five9conversationsendmessagerequest.SendConversationMessageRequest;
+import com.inference.whatsappintegration.application.dto.conversationseventsdto.conversationmessageeventrequest.ConversationMessageEventRequest;
+import com.inference.whatsappintegration.application.dto.conversationseventsdto.conversationterminateevent.ConversationTerminateEvenRequest;
+import com.inference.whatsappintegration.infrastructure.persistence.entity.Five9Session;
+
+public interface Five9ConversationService {
+    void processFive9MessageAdded(String tokenId, ConversationMessageEventRequest conversationMessageEventRequest);
+
+    void processFive9Terminate(String tokenId, ConversationTerminateEvenRequest conversationTerminateEvenRequest);
+
+    int sendFive9MessageConversation(Five9Session five9Session, SendConversationMessageRequest sendConversationMessageRequest);
+}
